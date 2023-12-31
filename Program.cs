@@ -131,7 +131,7 @@ namespace DesktopCalculator
                     
                     return "div 0 ERROR";
                 }
-            C.State = 2;//go to state 1
+            C.State = 2;//go to state 2
  
             C.OP1 = CalcResult;//put result in OP1
             C.OP2 = 0;

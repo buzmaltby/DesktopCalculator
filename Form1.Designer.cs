@@ -46,7 +46,7 @@
             this.txtOutPut = new System.Windows.Forms.TextBox();
             this.btnBackSpace = new System.Windows.Forms.Button();
             this.btnEqual = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.clrButton = new System.Windows.Forms.Button();
             this.hist0 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -261,17 +261,17 @@
             this.btnEqual.UseVisualStyleBackColor = true;
             this.btnEqual.Click += new System.EventHandler(this.btnEqual_Click);
             // 
-            // button11
+            // clrButton
             // 
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(364, 159);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(75, 75);
-            this.button11.TabIndex = 18;
-            this.button11.Text = "Clear";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.clrButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.clrButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clrButton.Location = new System.Drawing.Point(364, 159);
+            this.clrButton.Name = "clrButton";
+            this.clrButton.Size = new System.Drawing.Size(75, 75);
+            this.clrButton.TabIndex = 18;
+            this.clrButton.Text = "Clear";
+            this.clrButton.UseVisualStyleBackColor = true;
+            this.clrButton.Click += new System.EventHandler(this.button11_Click);
             // 
             // hist0
             // 
@@ -288,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 515);
             this.Controls.Add(this.hist0);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.clrButton);
             this.Controls.Add(this.btnEqual);
             this.Controls.Add(this.btnBackSpace);
             this.Controls.Add(this.txtOutPut);
@@ -336,7 +336,7 @@
         private System.Windows.Forms.TextBox txtOutPut;
         private System.Windows.Forms.Button btnBackSpace;
         private System.Windows.Forms.Button btnEqual;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button clrButton;
         private System.Windows.Forms.Label hist0;
     }
 }

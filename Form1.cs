@@ -101,21 +101,24 @@ namespace DesktopCalculator
 
         private void btnEqual_Click(object sender, EventArgs e)
         {
+            hist0.Text += txtOutPut.Text;
             txtOutPut.Text = Calc.Equals(txtOutPut.Text, ref C);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = "";
+            hist0.Text= txtOutPut.Text;
+            C.State = 0;
 
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            if (C.State == 2 | C.State == 3)
-            { 
-                txtOutPut.Text = Calc.PlusButtonPush(txtOutPut.Text, ref C);
+            if (C.State == 1 | C.State == 3)
+            {
                 hist0.Text = txtOutPut.Text + "+";
+                txtOutPut.Text = Calc.PlusButtonPush(txtOutPut.Text, ref C);
             }
             
         }
