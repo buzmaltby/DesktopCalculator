@@ -237,7 +237,6 @@
             this.txtOutPut.TabIndex = 15;
             this.txtOutPut.Text = "0";
             this.txtOutPut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtOutPut.TextChanged += new System.EventHandler(this.txtOutPut_TextChanged);
             // 
             // btnBackSpace
             // 
