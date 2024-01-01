@@ -79,6 +79,7 @@ namespace DesktopCalculator
             if (C.State == 0) //state 0
             {
                 //C.OP1 = 0;
+                C.State = 1;
                 return ("-"); //no numbers yet, making a negative number
             }
             else if (C.State == 1)//state 1
@@ -90,8 +91,8 @@ namespace DesktopCalculator
                 C.State  = 2;
                 //move to state 2
                 return ("");//clear input for second operand
-           }
-            else //only case left is going to do another subtraction
+            }
+           else //only case left is going to do another subtraction
             {//got to think about this some more.
                 //T
                 if (!double.TryParse(txt, out C.OP2))//convert to double
@@ -99,10 +100,7 @@ namespace DesktopCalculator
                 //**** review the following!!!
                 result = DoCalc(ref C); //do the calulation
                 C.OP = "-";//store the operand
-                           // if TryParse()
-                if (!double.TryParse(txt, out C.OP1))//convert to double
-                    return ("Error. Not a number");
-                //go to state 2 waiting for another subtrahend
+               //go to state 2 waiting for another subtrahend
                 C.State = 2;
                 return result;
             }

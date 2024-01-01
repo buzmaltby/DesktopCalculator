@@ -90,13 +90,22 @@ namespace DesktopCalculator
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            if (C.State == 1) { hist0.Text = txtOutPut.Text + "-"; }
+   
             //record OP1 and OP in history
             if (C.State == 3) 
             { //record full equation in history
                 hist0.Text = hist0.Text + txtOutPut.Text; 
             }
-            txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text,ref C);
+                hist0.Text = txtOutPut.Text + "-";
+            if (C.State !=2)
+            {
+                txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text,ref C);
+            }
+            else
+            {
+                C.State = 3;
+                txtOutPut.Text = "-";
+            }
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -106,7 +115,7 @@ namespace DesktopCalculator
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {
+        {//clear button
             txtOutPut.Text = "";
             hist0.Text= txtOutPut.Text;
             C.State = 0;
