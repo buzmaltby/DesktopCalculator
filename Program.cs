@@ -52,7 +52,7 @@ namespace DesktopCalculator
 
             if (C.State == 2) 
             { C.State = 3;  return newnum; }//first digit of OP2
-            //move from state 2 to state 3
+            //states 1 and 3 keep concatenating
             return txt + newnum;
         }
         public static string PlusButtonPush(string txt,ref OPS C)
@@ -74,32 +74,26 @@ namespace DesktopCalculator
 
         }
         public static string NegButtonPush(string txt,ref OPS C)
-        {
+        { // only call this in state1 or state3
             string result;
-            if (C.State == 0) //state 0
-            {
-                //C.OP1 = 0;
-                C.State = 1;
-                return ("-"); //no numbers yet, making a negative number
-            }
-            else if (C.State == 1)//state 1
+            if (C.State == 1)//state 1
             {
                 if (!double.TryParse(txt, out C.OP1))//convert to double
                     return ("Error. Not a number");
                 //store current entry 
                 C.OP = "-";// doing subtraction. store operand 1 and operator
-                C.State  = 2;
+                C.State = 2;
                 //move to state 2
                 return ("");//clear input for second operand
             }
-           else //only case left is going to do another subtraction
-            {//got to think about this some more.
-                //T
+            else // (C.State == 3)//going to do another subtraction
+            {
+                C.OP = "-";
                 if (!double.TryParse(txt, out C.OP2))//convert to double
                     return ("Error. Not a number");
                 //**** review the following!!!
                 result = DoCalc(ref C); //do the calulation
-                C.OP = "-";//store the operand
+                //store the operand
                //go to state 2 waiting for another subtrahend
                 C.State = 2;
                 return result;

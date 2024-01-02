@@ -90,22 +90,40 @@ namespace DesktopCalculator
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-   
-            //record OP1 and OP in history
-            if (C.State == 3) 
-            { //record full equation in history
-                hist0.Text = hist0.Text + txtOutPut.Text; 
-            }
-                hist0.Text = txtOutPut.Text + "-";
-            if (C.State !=2)
+            string junk; // to receive return value from Calc.NegButtonPush
+            switch (C.State)
             {
-                txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text,ref C);
+                case 0:// starting with a negative number
+                    {
+                        hist0.Text = "-";
+                        txtOutPut.Text = "-";
+                        C.State = 1;
+                        break;
+                    }
+                case 1:
+                    {//doing a subtraction 
+                        hist0.Text = hist0.Text + txtOutPut.Text + "-";
+                        junk = Calc.NegButtonPush(txtOutPut.Text,ref  C);
+                        C.State = 2;
+                        break;
+                    }
+                case 2:
+                    {   //OP2 will be a negative number
+                        txtOutPut.Text = "-";
+                        C.State = 3;
+                        break;
+                    }
+                case 3:
+                    {//means next op will be a subtraction
+                        hist0.Text = hist0.Text + txtOutPut.Text + "-";
+                        txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        break;
+                    }
+                   
+
             }
-            else
-            {
-                C.State = 3;
-                txtOutPut.Text = "-";
-            }
+ 
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -116,8 +134,11 @@ namespace DesktopCalculator
 
         private void button11_Click(object sender, EventArgs e)
         {//clear button
-            txtOutPut.Text = "";
-            hist0.Text= txtOutPut.Text;
+            txtOutPut.Text = "0";
+            hist0.Text= "";
+            C.OP = "";
+            C.OP1 = 0;
+            C.OP2 = 0;
             C.State = 0;
 
         }
