@@ -127,7 +127,7 @@ namespace DesktopCalculator
  
             C.OP1 = CalcResult;//put result in OP1
             C.OP2 = 0;
-            C.OP = "";
+ 
             return CalcResult.ToString();
 
 
