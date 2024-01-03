@@ -145,12 +145,29 @@ namespace DesktopCalculator
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            if (C.State == 1 | C.State == 3)
+            string junk;
+            switch (C.State)
             {
-                hist0.Text = txtOutPut.Text + "+";
-                txtOutPut.Text = Calc.PlusButtonPush(txtOutPut.Text, ref C);
-            }
-            
+                case 0: break; //ignore. not a valid entry
+                case 2: break;
+                case 1:
+                    {
+                        //doing an addition
+                        hist0.Text = txtOutPut.Text + "+";
+                        junk = Calc.PlusButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        break;
+                    }
+                case 3:
+                    {
+                        //do the pending operation and start an addition
+                        hist0.Text = hist0.Text + txtOutPut.Text + "+";
+                        txtOutPut.Text=Calc.PlusButtonPush(txtOutPut.Text, ref C);
+                        C.State=2; 
+                        break;
+                    }
+                     
+            }     
         }
 
         
