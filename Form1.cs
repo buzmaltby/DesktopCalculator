@@ -118,6 +118,7 @@ namespace DesktopCalculator
                         hist0.Text = hist0.Text + txtOutPut.Text + "-";
                         txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
+                        C.OP = "-";
                         break;
                     }
                    
@@ -130,6 +131,8 @@ namespace DesktopCalculator
         {
             hist0.Text += txtOutPut.Text;
             txtOutPut.Text = Calc.Equals(txtOutPut.Text, ref C);
+            C.State = 1;
+            C.OP = "";
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -156,20 +159,83 @@ namespace DesktopCalculator
                         hist0.Text = txtOutPut.Text + "+";
                         junk = Calc.PlusButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
+                        C.OP = "+";
                         break;
                     }
                 case 3:
                     {
                         //do the pending operation and start an addition
                         hist0.Text = hist0.Text + txtOutPut.Text + "+";
-                        txtOutPut.Text=Calc.PlusButtonPush(txtOutPut.Text, ref C);
-                        C.State=2; 
+                        txtOutPut.Text = Calc.PlusButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        C.OP = "+";
                         break;
                     }
-                     
+
             }     
         }
 
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            string junk;
+            switch (C.State)
+            {
+                case 0: break;
+                case 2: break;
+                case 1:
+                    {
+                        //doing a multiplication
+                        hist0.Text = txtOutPut.Text + "*";
+                        junk = Calc.MultiplyButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        C.OP = "*";
+                        break;
+                        //save the multiply for later
+
+                    }
+                case 3:
+                    {
+                        //do the pending operation and start a multiply
+                        hist0.Text = hist0.Text + txtOutPut.Text + "*";
+                        txtOutPut.Text = Calc.DivideButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        C.OP = "*";
+                        break;
+
+                    }
+
+            }
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            string junk;
+            switch (C.State)
+            {
+                case 0: break;
+                case 2: break;
+                case 1:
+                    {
+                        //doing a division
+                        hist0.Text = txtOutPut.Text + "/";
+                        junk = Calc.DivideButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        C.OP = "/";
+                        break;
+                                            }
+                case 3:
+                    {
+                        //do the pending operation and start a division
+                        hist0.Text = hist0.Text + txtOutPut.Text + "/";
+                        txtOutPut.Text = Calc.DivideButtonPush(txtOutPut.Text, ref C);
+                        C.State = 2;
+                        C.OP = "/"; //store operator
+
+                        break;
+
+                    }
+            }
+        }
         
     }
 }

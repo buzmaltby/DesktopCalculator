@@ -55,20 +55,56 @@ namespace DesktopCalculator
             //states 1 and 3 keep concatenating
             return txt + newnum;
         }
+        public static string DivideButtonPush(string txt, ref OPS C)
+        {
+            string result;
+            if (C.State == 3)
+            {
+                if (!double.TryParse(txt, out C.OP2))//convert to double
+                    return ("Error. Not a number");
+                result = DoCalc(ref C);
+                return result;
+            } //else state 1. set OP1 
+            C.OP = "/";
+            if (!double.TryParse(txt, out C.OP1))//convert to double
+                return ("Error. Not a number");
+
+            result = ""; //return blank to await operand 2
+            return result;
+
+        }
+        public static string MultiplyButtonPush(string txt, ref OPS C)
+        {
+            string result;
+            if(C.State==3)
+            { //do the pending operation
+                if (!double.TryParse(txt, out C.OP2))//convert to double
+                    return ("Error. Not a number");
+                result = DoCalc(ref C);
+                return result;
+            }//else state 1. set OP1
+            C.OP = "*";
+            if (!double.TryParse(txt, out C.OP1))//convert to double
+                return ("Error. Not a number");
+
+            result = ""; //return blank to await operand 2
+            return result;
+
+        }
         public static string PlusButtonPush(string txt,ref OPS C)
         {
             string result;
-            C.OP = "+"; //store operator
             if (C.State == 3) //stringing together operations
             {
                 if (!double.TryParse(txt, out C.OP2))//convert to double
                     return ("Error. Not a number");
                 result = DoCalc(ref C);
                 return result;
-            }
+            }//else state 1. set OP1
+            C.OP = "+"; //store operator
             if (!double.TryParse(txt, out C.OP1))//convert to double
                 return ("Error. Not a number");
-          
+
             result = ""; //return blank to await operand 2
             return result;
 

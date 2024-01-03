@@ -192,6 +192,7 @@
             this.btnDivide.TabIndex = 14;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = true;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // btnPlus
             // 
@@ -227,6 +228,7 @@
             this.btnMultiply.TabIndex = 11;
             this.btnMultiply.Text = "*";
             this.btnMultiply.UseVisualStyleBackColor = true;
+            this.btnMultiply.Click += new System.EventHandler(this.btnMultiply_Click);
             // 
             // txtOutPut
             // 
