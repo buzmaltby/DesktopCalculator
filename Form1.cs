@@ -236,6 +236,39 @@ namespace DesktopCalculator
                     }
             }
         }
-        
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string newstring = "";
+            newstring = newstring + e.KeyChar;
+            switch (newstring)
+            {
+                case ("0"):
+                case ("1"):
+                case ("2"):
+                case ("3"):
+                case ("4"):
+                case ("5"): 
+                case ("6"):
+                case ("7"):
+                case ("8"):
+                case ("9"):
+                    {
+                        txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, newstring, ref C);
+                        break;
+                    }
+                case ("+"):
+                case ("-"):
+                case ("*"):
+                case ("/"):
+                    {
+                        break;
+                    }
+              
+
+
+
+            }
+        }
     }
 }
