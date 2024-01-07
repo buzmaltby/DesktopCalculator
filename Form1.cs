@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopCalculator;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace DesktopCalculator
         public Form1()
         {
             InitializeComponent();
-
+            
 
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -239,6 +240,7 @@ namespace DesktopCalculator
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             string newstring = "";
             newstring = newstring + e.KeyChar;
             switch (newstring)
@@ -248,7 +250,7 @@ namespace DesktopCalculator
                 case ("2"):
                 case ("3"):
                 case ("4"):
-                case ("5"): 
+                case ("5"):
                 case ("6"):
                 case ("7"):
                 case ("8"):
@@ -264,11 +266,14 @@ namespace DesktopCalculator
                     {
                         break;
                     }
-              
-
 
 
             }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }
