@@ -296,7 +296,7 @@ namespace DesktopCalculator
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            
         }
     }
 }
