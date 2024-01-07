@@ -88,8 +88,7 @@ namespace DesktopCalculator
             //put one in if none there yet
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, ".",ref C);
         }
-
-        private void btnMinus_Click(object sender, EventArgs e)
+        private void MinusSign()
         {
             string junk; // to receive return value from Calc.NegButtonPush
             switch (C.State)
@@ -104,7 +103,7 @@ namespace DesktopCalculator
                 case 1:
                     {//doing a subtraction 
                         hist0.Text = hist0.Text + txtOutPut.Text + "-";
-                        junk = Calc.NegButtonPush(txtOutPut.Text,ref  C);
+                        junk = Calc.NegButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
                         break;
                     }
@@ -122,18 +121,26 @@ namespace DesktopCalculator
                         C.OP = "-";
                         break;
                     }
-                   
+
 
             }
- 
-        }
 
-        private void btnEqual_Click(object sender, EventArgs e)
+        }
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            MinusSign();
+        }
+        private void EqualSign()
         {
             hist0.Text += txtOutPut.Text;
             txtOutPut.Text = Calc.Equals(txtOutPut.Text, ref C);
             C.State = 1;
             C.OP = "";
+
+        }
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            EqualSign();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -146,8 +153,7 @@ namespace DesktopCalculator
             C.State = 0;
 
         }
-
-        private void btnPlus_Click(object sender, EventArgs e)
+        private void PlusSign()
         {
             string junk;
             switch (C.State)
@@ -173,10 +179,13 @@ namespace DesktopCalculator
                         break;
                     }
 
-            }     
+            }
         }
-
-        private void btnMultiply_Click(object sender, EventArgs e)
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            PlusSign();
+        }
+        private void MultiplySign()
         {
             string junk;
             switch (C.State)
@@ -206,9 +215,14 @@ namespace DesktopCalculator
                     }
 
             }
+
         }
 
-        private void btnDivide_Click(object sender, EventArgs e)
+        private void btnMultiply_Click(object sender, EventArgs e)
+        {
+            MultiplySign();
+        }
+        private void DivSign()
         {
             string junk;
             switch (C.State)
@@ -223,7 +237,7 @@ namespace DesktopCalculator
                         C.State = 2;
                         C.OP = "/";
                         break;
-                                            }
+                    }
                 case 3:
                     {
                         //do the pending operation and start a division
@@ -236,6 +250,11 @@ namespace DesktopCalculator
 
                     }
             }
+        }
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            DivSign();
+
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
@@ -260,13 +279,17 @@ namespace DesktopCalculator
                         break;
                     }
                 case ("+"):
+                    { PlusSign(); break; }
                 case ("-"):
+                    { MinusSign(); break; }
                 case ("*"):
+                    { MultiplySign(); break; }
                 case ("/"):
-                    {
-                        break;
-                    }
-
+                    { DivSign(); break; }
+                case ("="):
+                    { EqualSign(); break; }
+                break;
+ 
 
             }
         }
