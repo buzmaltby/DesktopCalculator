@@ -83,10 +83,15 @@ namespace DesktopCalculator
 
         private void button10_Click(object sender, EventArgs e)
         {
+            Decimal()
+        }
+        private void Decimal()
+        {
             //already a decimal point in operand? if so, ignore
             if (txtOutPut.Text.Contains(".")) return;
             //put one in if none there yet
-            txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, ".",ref C);
+            txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, ".", ref C);
+
         }
         private void MinusSign()
         {
@@ -278,6 +283,8 @@ namespace DesktopCalculator
                         txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, newstring, ref C);
                         break;
                     }
+                case ("."):
+                    { Decimal();break }
                 case ("+"):
                     { PlusSign(); break; }
                 case ("-"):
