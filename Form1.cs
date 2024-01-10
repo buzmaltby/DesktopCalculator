@@ -23,7 +23,8 @@ namespace DesktopCalculator
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtOutPut.Focus();
+            txtOutPut.Enabled = false;
+            btnEqual.Focus();
             C.OP1 = 0; 
             C.OP2 = 0;
             C.OP = "";
@@ -83,7 +84,7 @@ namespace DesktopCalculator
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Decimal()
+            Decimal();
         }
         private void Decimal()
         {
@@ -284,7 +285,7 @@ namespace DesktopCalculator
                         break;
                     }
                 case ("."):
-                    { Decimal();break }
+                    { Decimal();break; }
                 case ("+"):
                     { PlusSign(); break; }
                 case ("-"):
