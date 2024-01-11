@@ -252,6 +252,7 @@
             this.txtOutPut.Name = "txtOutPut";
             this.txtOutPut.Size = new System.Drawing.Size(330, 49);
             this.txtOutPut.TabIndex = 15;
+            this.txtOutPut.TabStop = false;
             this.txtOutPut.Text = "0";
             this.txtOutPut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -266,6 +267,7 @@
             this.btnBackSpace.TabStop = false;
             this.btnBackSpace.Text = "<<<";
             this.btnBackSpace.UseVisualStyleBackColor = true;
+            this.btnBackSpace.Click += new System.EventHandler(this.btnBackSpace_Click);
             // 
             // btnEqual
             // 

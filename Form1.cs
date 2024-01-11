@@ -301,7 +301,18 @@ namespace DesktopCalculator
 
             }
         }
+        private void BackSpace ()
+        {
+            if (txtOutPut.Text.Length > 0)
+            {
+                int delpos = txtOutPut.Text.Length - 1;//0based end char
+                txtOutPut.Text = txtOutPut.Text.Remove(delpos);
+            }
 
-  
+        }
+        private void btnBackSpace_Click(object sender, EventArgs e)
+        {
+            BackSpace();
+        }
     }
 }
