@@ -284,6 +284,9 @@ namespace DesktopCalculator
                         txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, newstring, ref C);
                         break;
                     }
+                case ("\b"):
+                    BackSpace();
+                    break;
                 case ("."):
                     { Decimal();break; }
                 case ("+"):
