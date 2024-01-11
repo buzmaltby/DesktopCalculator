@@ -35,6 +35,7 @@ namespace DesktopCalculator
         private void button7_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "7",ref C);
+            btnEqual.Focus();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -45,46 +46,55 @@ namespace DesktopCalculator
         private void button9_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "9",ref C);
+            btnEqual.Focus();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "4",ref C);
+            btnEqual.Focus();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "5",ref C );
+            btnEqual.Focus();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "6",ref C);
+            btnEqual.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "1",ref C);
+            btnEqual.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "2",ref C);
+            btnEqual.Focus();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "3",ref C);
+            btnEqual.Focus();
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
             txtOutPut.Text = Calc.NumberButtonPush(txtOutPut.Text, "0",ref C);
+            btnEqual.Focus();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
             Decimal();
+            btnEqual.Focus();
         }
         private void Decimal()
         {
@@ -135,10 +145,11 @@ namespace DesktopCalculator
         private void btnMinus_Click(object sender, EventArgs e)
         {
             MinusSign();
+            btnEqual.Focus();
         }
         private void EqualSign()
         {
-            hist0.Text += txtOutPut.Text;
+            hist0.Text += (txtOutPut.Text + "=");
             txtOutPut.Text = Calc.Equals(txtOutPut.Text, ref C);
             C.State = 1;
             C.OP = "";
@@ -157,6 +168,7 @@ namespace DesktopCalculator
             C.OP1 = 0;
             C.OP2 = 0;
             C.State = 0;
+            btnEqual.Focus();
 
         }
         private void PlusSign()
@@ -190,6 +202,7 @@ namespace DesktopCalculator
         private void btnPlus_Click(object sender, EventArgs e)
         {
             PlusSign();
+            btnEqual.Focus();
         }
         private void MultiplySign()
         {
@@ -227,6 +240,7 @@ namespace DesktopCalculator
         private void btnMultiply_Click(object sender, EventArgs e)
         {
             MultiplySign();
+            btnEqual.Focus();
         }
         private void DivSign()
         {
@@ -260,6 +274,7 @@ namespace DesktopCalculator
         private void btnDivide_Click(object sender, EventArgs e)
         {
             DivSign();
+            btnEqual.Focus();
 
         }
 
@@ -316,6 +331,7 @@ namespace DesktopCalculator
         private void btnBackSpace_Click(object sender, EventArgs e)
         {
             BackSpace();
+            btnEqual.Focus();
         }
     }
 }
