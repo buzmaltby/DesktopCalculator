@@ -128,7 +128,6 @@ namespace DesktopCalculator
                     return ("Error. Not a number");
                 //**** review the following!!!
                 result = DoCalc(ref C); //do the calulation
-                //store the operand
                //go to state 2 waiting for another subtrahend
                 C.State = 2;
                 return result;
