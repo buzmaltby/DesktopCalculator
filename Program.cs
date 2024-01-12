@@ -124,7 +124,6 @@ namespace DesktopCalculator
             }
             else // (C.State == 3)//going to do another subtraction
             {
-                C.OP = "-";
                 if (!double.TryParse(txt, out C.OP2))//convert to double
                     return ("Error. Not a number");
                 //**** review the following!!!
