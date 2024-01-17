@@ -336,9 +336,9 @@ namespace DesktopCalculator
 
         private void btn_Sqrt_Click(object sender, EventArgs e)
         {
-            hist0.Text = C.OP1 + "SQRT";
-            C.OP = "Sqrt";
-            txtOutPut.Text = Calc.DoCalc(C);
+           hist0.Text = txtOutPut.Text + " SQRT =";
+           
+           txtOutPut.Text = Calc.SqrtPush(txtOutPut.Text, ref C);
         }
     }
 }

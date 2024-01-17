@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using static System.Net.Mime.MediaTypeNames;
 
 
 namespace DesktopCalculator
@@ -133,6 +134,20 @@ namespace DesktopCalculator
                 return result;
             }
         }
+        public static string SqrtPush(string txt, ref OPS C)
+        {
+            string result;
+            C.OP = "Sqrt";
+            if (!double.TryParse(txt, out C.OP1))//convert to double
+                return ("Error. Not a number");
+            result = DoCalc(ref C);
+            //Special Case! replace state 2 with state 1.
+            //we don't know what the next operation will be
+            C.OP = "";
+            C.State = 1;
+            return result;
+
+        }
         public static string DoCalc(ref OPS C)
 
         {
@@ -147,9 +162,9 @@ namespace DesktopCalculator
                     C.OP2 = 0;
                     C.OP1 = 0;
                     C.State = 0;
-                    return "sqrt of neg"
+                    return "sqrt of neg";
                 }
-            if (C.OP == "+")//add
+            else if (C.OP == "+")//add
                 CalcResult = C.OP1 + C.OP2;
             else if (C.OP == "-")//subtract
                 CalcResult = C.OP1 - C.OP2;
@@ -169,7 +184,8 @@ namespace DesktopCalculator
                     
                     return "div 0 ERROR";
                 }
-            C.State = 2;//go to state 2
+            C.State = 2;//go to state 2 except on single operand
+                        //operations!
  
             C.OP1 = CalcResult;//put result in OP1
             C.OP2 = 0;
