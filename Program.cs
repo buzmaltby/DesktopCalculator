@@ -137,6 +137,18 @@ namespace DesktopCalculator
 
         {
             double CalcResult;
+            if (C.OP == "Sqrt")
+                try
+                { CalcResult = Math.Sqrt(C.OP1); }
+                catch // oops, negative number
+                { CalcResult = 0;
+                    //make em start over at state 0
+                    C.OP = "";
+                    C.OP2 = 0;
+                    C.OP1 = 0;
+                    C.State = 0;
+                    return "sqrt of neg"
+                }
             if (C.OP == "+")//add
                 CalcResult = C.OP1 + C.OP2;
             else if (C.OP == "-")//subtract

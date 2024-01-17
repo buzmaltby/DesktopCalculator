@@ -48,6 +48,7 @@
             this.btnEqual = new System.Windows.Forms.Button();
             this.clrButton = new System.Windows.Forms.Button();
             this.hist0 = new System.Windows.Forms.Label();
+            this.btn_Sqrt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -303,12 +304,26 @@
             this.hist0.TabIndex = 19;
             this.hist0.Text = "0";
             // 
+            // btn_Sqrt
+            // 
+            this.btn_Sqrt.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Sqrt.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Sqrt.Location = new System.Drawing.Point(364, 240);
+            this.btn_Sqrt.Name = "btn_Sqrt";
+            this.btn_Sqrt.Size = new System.Drawing.Size(75, 75);
+            this.btn_Sqrt.TabIndex = 20;
+            this.btn_Sqrt.TabStop = false;
+            this.btn_Sqrt.Text = "Sqrt";
+            this.btn_Sqrt.UseVisualStyleBackColor = true;
+            this.btn_Sqrt.Click += new System.EventHandler(this.btn_Sqrt_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 515);
+            this.Controls.Add(this.btn_Sqrt);
             this.Controls.Add(this.hist0);
             this.Controls.Add(this.clrButton);
             this.Controls.Add(this.btnEqual);
@@ -362,6 +377,7 @@
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button clrButton;
         private System.Windows.Forms.Label hist0;
+        private System.Windows.Forms.Button btn_Sqrt;
     }
 }
 
