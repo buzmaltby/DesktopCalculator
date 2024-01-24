@@ -339,6 +339,7 @@ namespace DesktopCalculator
            hist0.Text = txtOutPut.Text + " SQRT =";
            
            txtOutPut.Text = Calc.SqrtPush(txtOutPut.Text, ref C);
+           hist0.Text= hist0.Text  + txtOutPut.Text;
         }
     }
 }

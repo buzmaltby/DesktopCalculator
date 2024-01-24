@@ -49,6 +49,9 @@
             this.clrButton = new System.Windows.Forms.Button();
             this.hist0 = new System.Windows.Forms.Label();
             this.btn_Sqrt = new System.Windows.Forms.Button();
+            this.btn_Inverse = new System.Windows.Forms.Button();
+            this.btnMemoryStore = new System.Windows.Forms.Button();
+            this.btnMemoryRecall = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -249,7 +252,7 @@
             // txtOutPut
             // 
             this.txtOutPut.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOutPut.Location = new System.Drawing.Point(14, 90);
+            this.txtOutPut.Location = new System.Drawing.Point(14, 12);
             this.txtOutPut.Name = "txtOutPut";
             this.txtOutPut.Size = new System.Drawing.Size(330, 49);
             this.txtOutPut.TabIndex = 15;
@@ -298,11 +301,10 @@
             // hist0
             // 
             this.hist0.AutoSize = true;
-            this.hist0.Location = new System.Drawing.Point(0, 0);
+            this.hist0.Location = new System.Drawing.Point(479, 33);
             this.hist0.Name = "hist0";
-            this.hist0.Size = new System.Drawing.Size(13, 13);
+            this.hist0.Size = new System.Drawing.Size(0, 13);
             this.hist0.TabIndex = 19;
-            this.hist0.Text = "0";
             // 
             // btn_Sqrt
             // 
@@ -317,12 +319,51 @@
             this.btn_Sqrt.UseVisualStyleBackColor = true;
             this.btn_Sqrt.Click += new System.EventHandler(this.btn_Sqrt_Click);
             // 
+            // btn_Inverse
+            // 
+            this.btn_Inverse.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_Inverse.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Inverse.Location = new System.Drawing.Point(269, 78);
+            this.btn_Inverse.Name = "btn_Inverse";
+            this.btn_Inverse.Size = new System.Drawing.Size(75, 75);
+            this.btn_Inverse.TabIndex = 21;
+            this.btn_Inverse.TabStop = false;
+            this.btn_Inverse.Text = "1/x";
+            this.btn_Inverse.UseVisualStyleBackColor = true;
+            // 
+            // btnMemoryStore
+            // 
+            this.btnMemoryStore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMemoryStore.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryStore.Location = new System.Drawing.Point(95, 78);
+            this.btnMemoryStore.Name = "btnMemoryStore";
+            this.btnMemoryStore.Size = new System.Drawing.Size(75, 75);
+            this.btnMemoryStore.TabIndex = 22;
+            this.btnMemoryStore.TabStop = false;
+            this.btnMemoryStore.Text = "Mem Store";
+            this.btnMemoryStore.UseVisualStyleBackColor = true;
+            // 
+            // btnMemoryRecall
+            // 
+            this.btnMemoryRecall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMemoryRecall.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemoryRecall.Location = new System.Drawing.Point(176, 78);
+            this.btnMemoryRecall.Name = "btnMemoryRecall";
+            this.btnMemoryRecall.Size = new System.Drawing.Size(75, 75);
+            this.btnMemoryRecall.TabIndex = 23;
+            this.btnMemoryRecall.TabStop = false;
+            this.btnMemoryRecall.Text = "MemRec";
+            this.btnMemoryRecall.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 515);
+            this.ClientSize = new System.Drawing.Size(583, 530);
+            this.Controls.Add(this.btnMemoryRecall);
+            this.Controls.Add(this.btnMemoryStore);
+            this.Controls.Add(this.btn_Inverse);
             this.Controls.Add(this.btn_Sqrt);
             this.Controls.Add(this.hist0);
             this.Controls.Add(this.clrButton);
@@ -378,6 +419,9 @@
         private System.Windows.Forms.Button clrButton;
         private System.Windows.Forms.Label hist0;
         private System.Windows.Forms.Button btn_Sqrt;
+        private System.Windows.Forms.Button btn_Inverse;
+        private System.Windows.Forms.Button btnMemoryStore;
+        private System.Windows.Forms.Button btnMemoryRecall;
     }
 }
 

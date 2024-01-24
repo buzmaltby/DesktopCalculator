@@ -5,8 +5,6 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Net.Mime.MediaTypeNames;
-
 
 namespace DesktopCalculator
 {
@@ -156,6 +154,8 @@ namespace DesktopCalculator
                 try
                 { CalcResult = Math.Sqrt(C.OP1); }
                 catch // oops, negative number
+                // actually handled by the Sqrt function.
+                // returns NaN.
                 { CalcResult = 0;
                     //make em start over at state 0
                     C.OP = "";
