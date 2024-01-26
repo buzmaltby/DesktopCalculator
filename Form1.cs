@@ -374,5 +374,14 @@ namespace DesktopCalculator
                     }
             }
         }
+
+        private void btnInverse_Click(object sender, EventArgs e)
+        {
+            hist0.Text = txtOutPut.Text + " INV =";
+
+            txtOutPut.Text = Calc.InvPush(txtOutPut.Text, ref C);
+            hist0.Text = hist0.Text + txtOutPut.Text;
+
+        }
     }
 }

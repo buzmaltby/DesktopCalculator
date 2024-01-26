@@ -147,6 +147,18 @@ namespace DesktopCalculator
             return result;
 
         }
+        public static string InvPush(string txt, ref OPS C)
+        {
+            string result;
+            C.OP = "Inv";
+            if (!double.TryParse(txt, out C.OP1))
+                return ("Error. Not a number");
+            result = DoCalc(ref C);
+            C.OP = "";
+            C.State = 1;
+            return result;
+
+        }
         public static string DoCalc(ref OPS C)
 
         {
@@ -165,6 +177,8 @@ namespace DesktopCalculator
                     C.State = 0;
                     return "sqrt of neg";
                 }
+            else if (C.OP =="Inv")
+                CalcResult = 1/C.OP1;
             else if (C.OP == "+")//add
                 CalcResult = C.OP1 + C.OP2;
             else if (C.OP == "-")//subtract

@@ -330,6 +330,7 @@
             this.btnInverse.TabStop = false;
             this.btnInverse.Text = "1/x";
             this.btnInverse.UseVisualStyleBackColor = true;
+            this.btnInverse.Click += new System.EventHandler(this.btnInverse_Click);
             // 
             // btnMemoryStore
             // 
