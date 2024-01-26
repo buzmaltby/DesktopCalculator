@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DesktopCalculator
 {
@@ -28,7 +29,8 @@ namespace DesktopCalculator
             C.OP1 = 0; 
             C.OP2 = 0;
             C.OP = "";
-            C.State = 0; 
+            C.State = 0;
+            C.MEM = 0;
             
         }
    
@@ -340,6 +342,37 @@ namespace DesktopCalculator
            
            txtOutPut.Text = Calc.SqrtPush(txtOutPut.Text, ref C);
            hist0.Text= hist0.Text  + txtOutPut.Text;
+        }
+
+        private void btnMemoryStore_Click(object sender, EventArgs e)
+        {
+
+            if (!double.TryParse(txtOutPut.Text, out C.MEM))//convert to doubleC.MEM =txtOutPut.Text;
+            {
+                txtOutPut.Text = "NaN";
+                C.MEM = 0;
+            } 
+        }
+
+        private void btnMemoryRecall_Click(object sender, EventArgs e)
+        {
+            switch (C.State)
+            {
+                case 0:
+                case 1:
+                    {
+                        C.OP1 = C.MEM; 
+                        txtOutPut.Text=C.OP1.ToString();
+                        break;
+                    }
+                case 2:
+                case 3:
+                    {
+                        C.OP2 = C.MEM;
+                        txtOutPut.Text = C.OP2.ToString();
+                        break;
+                    }
+            }
         }
     }
 }

@@ -35,6 +35,7 @@ namespace DesktopCalculator
         public string OP;//operator 
         //state 0 waiting for first character of OP1
         public int State;//getting OP1
+        public double MEM; // Memory storage
       
         
 
