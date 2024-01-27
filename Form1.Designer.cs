@@ -52,6 +52,7 @@
             this.btnInverse = new System.Windows.Forms.Button();
             this.btnMemoryStore = new System.Windows.Forms.Button();
             this.btnMemoryRecall = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -358,12 +359,26 @@
             this.btnMemoryRecall.UseVisualStyleBackColor = true;
             this.btnMemoryRecall.Click += new System.EventHandler(this.btnMemoryRecall_Click);
             // 
+            // button11
+            // 
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(95, 78);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 75);
+            this.button11.TabIndex = 24;
+            this.button11.TabStop = false;
+            this.button11.Text = "Mem Clear";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 530);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.btnMemoryRecall);
             this.Controls.Add(this.btnMemoryStore);
             this.Controls.Add(this.btnInverse);
@@ -425,6 +440,7 @@
         private System.Windows.Forms.Button btnInverse;
         private System.Windows.Forms.Button btnMemoryStore;
         private System.Windows.Forms.Button btnMemoryRecall;
+        private System.Windows.Forms.Button button11;
     }
 }
 
