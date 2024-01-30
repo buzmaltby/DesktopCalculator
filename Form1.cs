@@ -335,8 +335,11 @@ namespace DesktopCalculator
 
         private void btn_Sqrt_Click(object sender, EventArgs e)
         {
+            C.OP = "Sqrt";
+            if (!double.TryParse(txtOutPut.Text, out C.OP1))//convert to double
+                return;
             hist0.Text = Calc.UpdateHistory(ref C, 1, "");
-            txtOutPut.Text = Calc.SqrtPush(txtOutPut.Text, ref C);
+            txtOutPut.Text = Calc.SqrtPush (ref C);
            
         }
 
@@ -375,8 +378,12 @@ namespace DesktopCalculator
 
         private void btnInverse_Click(object sender, EventArgs e)
         {
+            C.OP = "Inv";
+            if (!double.TryParse(txtOutPut.Text, out C.OP1))
+                return;
+
             hist0.Text = Calc.UpdateHistory(ref C, 1, txtOutPut.Text);
-            txtOutPut.Text = Calc.InvPush(txtOutPut.Text, ref C);
+            txtOutPut.Text = Calc.InvPush(ref C);
             btnEqual.Focus();
         }
 

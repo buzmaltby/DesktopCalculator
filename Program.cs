@@ -133,12 +133,9 @@ namespace DesktopCalculator
                 return result;
             }
         }
-        public static string SqrtPush(string txt, ref OPS C)
+        public static string SqrtPush(ref OPS C)
         {
             string result;
-            C.OP = "Sqrt";
-            if (!double.TryParse(txt, out C.OP1))//convert to double
-                return ("Error. Not a number");
             result = DoCalc(ref C);
             //Special Case! replace state 2 with state 1.
             //we don't know what the next operation will be
@@ -147,12 +144,9 @@ namespace DesktopCalculator
             return result;
 
         }
-        public static string InvPush(string txt, ref OPS C)
+        public static string InvPush(ref OPS C)
         {
             string result;
-            C.OP = "Inv";
-            if (!double.TryParse(txt, out C.OP1))
-                return ("Error. Not a number");
             result = DoCalc(ref C);
             C.OP = "";
             C.State = 1;
