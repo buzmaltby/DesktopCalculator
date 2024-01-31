@@ -53,6 +53,7 @@
             this.btnMemoryStore = new System.Windows.Forms.Button();
             this.btnMemoryRecall = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.lblMEM = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -374,12 +375,23 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
+            // lblMEM
+            // 
+            this.lblMEM.AutoSize = true;
+            this.lblMEM.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblMEM.Location = new System.Drawing.Point(176, 64);
+            this.lblMEM.MinimumSize = new System.Drawing.Size(20, 13);
+            this.lblMEM.Name = "lblMEM";
+            this.lblMEM.Size = new System.Drawing.Size(20, 13);
+            this.lblMEM.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 530);
+            this.Controls.Add(this.lblMEM);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.btnMemoryRecall);
             this.Controls.Add(this.btnMemoryStore);
@@ -443,6 +455,7 @@
         private System.Windows.Forms.Button btnMemoryRecall;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label hist0;
+        private System.Windows.Forms.Label lblMEM;
     }
 }
 

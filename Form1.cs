@@ -351,6 +351,10 @@ namespace DesktopCalculator
                 txtOutPut.Text = "NaN";
                 C.MEM = 0;
             }
+            if (C.MEM != 0)
+                lblMEM.Text = txtOutPut.Text;
+            else
+                lblMEM.Text = "";
             btnEqual.Focus();
         }
 
@@ -390,6 +394,7 @@ namespace DesktopCalculator
         private void button11_Click_1(object sender, EventArgs e)
         {
             C.MEM = 0;
+            lblMEM.Text = "";
             btnEqual.Focus();
         }
         public static string UpdateHistory(ref OPS C, int OPs, string op2)
