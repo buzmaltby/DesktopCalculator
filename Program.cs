@@ -226,20 +226,7 @@ namespace DesktopCalculator
             C.OP = "";
             return true;
         }
-        public static string UpdateHistory(ref OPS C, int OPs,string op2)
-        {//call every time a calculation is done OPs has # of operands
-            string result;
-            if (OPs == 2) // 2 operands surrounding an Operator
-            {
-                result = C.OP1.ToString();
-                result = result + " " + C.OP + " ";
-                result = result + op2;
-            }
-            else //single operand and an operator.
-                result = C.OP + C.OP1.ToString();
-            return result;
-
-        }
+ 
 
 
     }

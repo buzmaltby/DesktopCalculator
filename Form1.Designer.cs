@@ -302,9 +302,11 @@
             // hist0
             // 
             this.hist0.AutoSize = true;
-            this.hist0.Location = new System.Drawing.Point(479, 33);
+            this.hist0.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist0.Location = new System.Drawing.Point(487, 39);
+            this.hist0.MinimumSize = new System.Drawing.Size(20, 13);
             this.hist0.Name = "hist0";
-            this.hist0.Size = new System.Drawing.Size(0, 13);
+            this.hist0.Size = new System.Drawing.Size(20, 13);
             this.hist0.TabIndex = 19;
             // 
             // btn_Sqrt
@@ -435,12 +437,12 @@
         private System.Windows.Forms.Button btnBackSpace;
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button clrButton;
-        private System.Windows.Forms.Label hist0;
         private System.Windows.Forms.Button btn_Sqrt;
         private System.Windows.Forms.Button btnInverse;
         private System.Windows.Forms.Button btnMemoryStore;
         private System.Windows.Forms.Button btnMemoryRecall;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Label hist0;
     }
 }
 

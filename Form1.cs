@@ -133,7 +133,7 @@ namespace DesktopCalculator
                     }
                 case 3:
                     {//means next op will be a subtraction
-                        hist0.Text = Calc.UpdateHistory(ref C, 2, txtOutPut.Text);
+                        hist0.Text = UpdateHistory(ref C, 2, txtOutPut.Text);
                         txtOutPut.Text = Calc.NegButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
                         C.OP = "-";
@@ -151,7 +151,7 @@ namespace DesktopCalculator
         }
         private void EqualSign()
         {
-            hist0.Text =Calc.UpdateHistory(ref C, 2, txtOutPut.Text);
+            hist0.Text =UpdateHistory(ref C, 2, txtOutPut.Text);
             txtOutPut.Text = Calc.Equals(txtOutPut.Text, ref C);
             C.State = 1;
             C.OP = "";
@@ -191,7 +191,7 @@ namespace DesktopCalculator
                 case 3:
                     {
                         //do the pending operation and start an addition
-                        hist0.Text = Calc.UpdateHistory(ref C, 2, txtOutPut.Text);
+                        hist0.Text = UpdateHistory(ref C, 2, txtOutPut.Text);
                         txtOutPut.Text = Calc.PlusButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
                         C.OP = "+";
@@ -225,7 +225,7 @@ namespace DesktopCalculator
                 case 3:
                     {
                         //do the pending operation and start a multiply
-                        hist0.Text = Calc.UpdateHistory(ref C, 2, txtOutPut.Text);
+                        hist0.Text = UpdateHistory(ref C, 2, txtOutPut.Text);
                         txtOutPut.Text = Calc.DivideButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
                         C.OP = "*";
@@ -260,7 +260,7 @@ namespace DesktopCalculator
                 case 3:
                     {
                         //do the pending operation and start a division
-                        hist0.Text = Calc.UpdateHistory(ref C, 2, txtOutPut.Text);
+                        hist0.Text = UpdateHistory(ref C, 2, txtOutPut.Text);
                         txtOutPut.Text = Calc.DivideButtonPush(txtOutPut.Text, ref C);
                         C.State = 2;
                         C.OP = "/"; //store operator
@@ -338,7 +338,7 @@ namespace DesktopCalculator
             C.OP = "Sqrt";
             if (!double.TryParse(txtOutPut.Text, out C.OP1))//convert to double
                 return;
-            hist0.Text = Calc.UpdateHistory(ref C, 1, "");
+            hist0.Text = UpdateHistory(ref C, 1, "");
             txtOutPut.Text = Calc.SqrtPush (ref C);
            
         }
@@ -382,7 +382,7 @@ namespace DesktopCalculator
             if (!double.TryParse(txtOutPut.Text, out C.OP1))
                 return;
 
-            hist0.Text = Calc.UpdateHistory(ref C, 1, txtOutPut.Text);
+            hist0.Text = UpdateHistory(ref C, 1, txtOutPut.Text);
             txtOutPut.Text = Calc.InvPush(ref C);
             btnEqual.Focus();
         }
@@ -392,5 +392,20 @@ namespace DesktopCalculator
             C.MEM = 0;
             btnEqual.Focus();
         }
+        public static string UpdateHistory(ref OPS C, int OPs, string op2)
+        {//call every time a calculation is done OPs has # of operands
+            string result;
+            if (OPs == 2) // 2 operands surrounding an Operator
+            {
+                result = C.OP1.ToString();
+                result = result + " " + C.OP + " ";
+                result = result + op2;
+            }
+            else //single operand and an operator.
+                result = C.OP + C.OP1.ToString();
+            return result;
+
+        }
     }
+
 }
