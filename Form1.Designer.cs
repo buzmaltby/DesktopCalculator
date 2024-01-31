@@ -54,6 +54,12 @@
             this.btnMemoryRecall = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.lblMEM = new System.Windows.Forms.Label();
+            this.hist1 = new System.Windows.Forms.Label();
+            this.hist2 = new System.Windows.Forms.Label();
+            this.hist3 = new System.Windows.Forms.Label();
+            this.hist4 = new System.Windows.Forms.Label();
+            this.hist5 = new System.Windows.Forms.Label();
+            this.hist6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -385,12 +391,78 @@
             this.lblMEM.Size = new System.Drawing.Size(20, 13);
             this.lblMEM.TabIndex = 25;
             // 
+            // hist1
+            // 
+            this.hist1.AutoSize = true;
+            this.hist1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist1.Location = new System.Drawing.Point(487, 63);
+            this.hist1.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist1.Name = "hist1";
+            this.hist1.Size = new System.Drawing.Size(20, 13);
+            this.hist1.TabIndex = 26;
+            // 
+            // hist2
+            // 
+            this.hist2.AutoSize = true;
+            this.hist2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist2.Location = new System.Drawing.Point(487, 87);
+            this.hist2.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist2.Name = "hist2";
+            this.hist2.Size = new System.Drawing.Size(20, 13);
+            this.hist2.TabIndex = 27;
+            // 
+            // hist3
+            // 
+            this.hist3.AutoSize = true;
+            this.hist3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist3.Location = new System.Drawing.Point(487, 111);
+            this.hist3.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist3.Name = "hist3";
+            this.hist3.Size = new System.Drawing.Size(20, 13);
+            this.hist3.TabIndex = 28;
+            // 
+            // hist4
+            // 
+            this.hist4.AutoSize = true;
+            this.hist4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist4.Location = new System.Drawing.Point(487, 135);
+            this.hist4.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist4.Name = "hist4";
+            this.hist4.Size = new System.Drawing.Size(20, 13);
+            this.hist4.TabIndex = 29;
+            // 
+            // hist5
+            // 
+            this.hist5.AutoSize = true;
+            this.hist5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist5.Location = new System.Drawing.Point(487, 159);
+            this.hist5.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist5.Name = "hist5";
+            this.hist5.Size = new System.Drawing.Size(20, 13);
+            this.hist5.TabIndex = 30;
+            // 
+            // hist6
+            // 
+            this.hist6.AutoSize = true;
+            this.hist6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.hist6.Location = new System.Drawing.Point(487, 183);
+            this.hist6.MinimumSize = new System.Drawing.Size(20, 13);
+            this.hist6.Name = "hist6";
+            this.hist6.Size = new System.Drawing.Size(20, 13);
+            this.hist6.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 530);
+            this.Controls.Add(this.hist6);
+            this.Controls.Add(this.hist5);
+            this.Controls.Add(this.hist4);
+            this.Controls.Add(this.hist3);
+            this.Controls.Add(this.hist2);
+            this.Controls.Add(this.hist1);
             this.Controls.Add(this.lblMEM);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.btnMemoryRecall);
@@ -456,6 +528,12 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label hist0;
         private System.Windows.Forms.Label lblMEM;
+        private System.Windows.Forms.Label hist1;
+        private System.Windows.Forms.Label hist2;
+        private System.Windows.Forms.Label hist3;
+        private System.Windows.Forms.Label hist4;
+        private System.Windows.Forms.Label hist5;
+        private System.Windows.Forms.Label hist6;
     }
 }
 
